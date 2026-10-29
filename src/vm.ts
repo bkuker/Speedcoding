@@ -514,6 +514,15 @@ const OP2s: Record<number, TOperation> = {
         }
     },
 
+    177: {
+        identifier: "ADDA",
+        code: 177,
+        execute: (exp) => {
+            AC += unpack(mem[exp.D]).A;
+            return exp.LOC + 1
+        }
+    },
+
     184: {
         identifier: "ADDB",
         code: 184,
