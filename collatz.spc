@@ -9,13 +9,17 @@
 //          If n is odd multiply by three and add one
 //      until n is one
 //
+//  The conjecture is that ALL such sequences lead to one.
+//
 //  Rb and Rc trach the number of times through the inner loop
 //  Rc for indexing to save the values of n in addresses 30+, and
 //  Rb for controlling how many values to print out.
 //
 //  The Address Counter tracks the starting point i for each
 //  sequence for use in the identification portion of the printout.
-
+//
+//  Calculation for a given i stops when n < i, because that n
+//  would have been checked earlier in the program
 
 // ========= Constants
 0000 DATA 0 1 2 3           // Integer Constants
@@ -49,7 +53,8 @@
                                                 // Rb++
                                                 // Rc++
 
-0017 SUB    0 0008 0001 0006    TRZ     0012    // if ( n == 1 ) goto NextSequence
+//0017 SUB    0 0008 0001 0006    TRZ     0012    // if ( n == 1 ) goto NextSequence
+0017 SUB    0 0008 0007 0006    TRMN    0012    // if ( n < i ) goto NextSequence
 
 0018 MPY    0 0008 0004 0006    -       -       // scratch = n * pi
 0019 ADD    0 0006 0005 0006    -       -       // scratch += pi/2
