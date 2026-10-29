@@ -756,6 +756,9 @@ export function parseAndLoad(s: string){
     resetHard()
 
     s.split("\n").forEach((l) => {
+        //Remove any trailing comments and whitespace
+        l = l.replace(/\/\/.*$/, '').trim();
+
         //Test if line is expression or data directive
         if(/DATA/.test(l)){
             const parts = l.split(" ")
