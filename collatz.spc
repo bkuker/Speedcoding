@@ -1,3 +1,9 @@
+//  Compute & print the sequences of the Collatz conjecture
+//  Author: Bill Kuker <bkuker@billkuker.com>
+//  Date:   October 2026
+//
+//  
+
 %IP 0010
 
 //Constants
@@ -17,11 +23,11 @@
 0011 DIV    0 0006 0002 0008    -       -
 
 0012 ADD    0 0001 0030 0030    ADDB    0017       //I++
-0013 MOVE   0 0030 0031 0031    SETRC   0       //n = i
+0013 MOVE   0 0030 0030 0031    SETRC   0       //n = i
 0014 NOOP   0 0000 0000 0000    STC     0015
 0015 PRINT  2 0040 0039 0000    SETRB   0    //Print and reset RB
 
-0016 MOVE   1 0031 0032 0040    TIBC     0017
+0016 MOVE   1 0031 0031 0040    TIBC     0017
 
 0017 SUB    0 0031 0001 0005    TRZ     0012    //n==1? Goto 12
 
