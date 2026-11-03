@@ -33,7 +33,7 @@
 0062 SUB    5 1003 0001 1000    TDABC   0063    // push m-1
 0063 MOVE   1 0065 0065 1000    TDABC   0064    //Push return instruction
 0064 NOOP   0 0000 0000 0000    TR      0050    // call function
-0065 MOVE   6 1001 1001 0040    TIABC   0090    //Pop result to @40                                           // return instruction
+0065 MOVE   6 1001 1001 0040    TIABC   0090    //Pop result to @40
                                                 //GOTO Return
 
 // BBBB
